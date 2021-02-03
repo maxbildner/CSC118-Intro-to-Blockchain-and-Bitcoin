@@ -1,0 +1,127 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;\red251\green0\blue7;}
+{\*\expandedcolortbl;;\cssrgb\c100000\c12195\c0;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid1\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid2\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li1440\lin1440 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\margl1440\margr1440\vieww17020\viewh27080\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\sl264\slmult1\pardirnatural\partightenfactor0
+
+\f0\b\fs34 \cf0 1/25/21\
+HES CSC118 Introduction to Blockchain and Bitcoin\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\b0 \cf0 Mastering Bitcoin Chapter 1 Notes\
+\pard\tx720\pardeftab560\slleading20\partightenfactor0
+\cf0 https://github.com/bitcoinbook/bitcoinbook\
+https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch01.asciidoc\
+\
+\
+\
+\
+- bitcoin has 4 key innovations:\
+	- a decentralized peer-to-peer network (the bitcoin protocol)\
+	- a public transaction ledger (the blockchain)\
+	- a set of rules for determining transaction validation (consensus rules)\
+	- a mechanism for reaching global consensus on the valid blockchain (Proof-of-work algorithm)\
+\
+- ?bitcoin protocol stack?\
+	- open source\
+\
+- \cf2 bitcoin keys\cf0  \
+	- allow users to prove ownership of bitcoin\
+	- often stored in a digital wallet on each user\'92s computer or smartphone\
+	- only prerequisite needed to spend bitcoin\
+	- ? same as digital signature?\
+	\
+- \cf2 peer-to-peer\cf0 \
+	- ? same as peer-to-peer in systems design?\
+	- there is no \'93central\'94 server or point of control\
+\
+- bitcoin \cf2 mining\cf0 \
+	- process of creating units of bitcoin\
+	- involves competing to find solutions to a mathematical problem while process bitcoin transactions\
+		- ? what mathematical problem?\
+	- every 10 minutes (on average), a miner can validate the transactions of the past 10 minutes\
+	  and is rewarded with brand new bitcoin\
+		- ? why every 10 minutes (opposed to 15)\
+	- process decentralizes the currency issuance and clearing functions of a central bank / Swift \
+	- bitcoin protocol has built in algorithms that regulate the mining functions\
+		- difficulty that miners perform is dynamically adjusted so that someone succeeds every 10 minutes\
+	   	   regardless of how many miners / processing power there is\
+	- protocol halves the rate at which new bitcoin is created every 4 years\
+		- ? why halving?\
+	- bitcoin total supply \'93fixed\'94 at 21 million\
+	- easily predictable curve of supply release by the year 2140\
+	\
+- bitcoin network participant\
+	- anyone using a device running the full bitcoin protocol stack may operate as a miner\
+\
+- bitcoin monetary policy\
+	- ? currency is deflationary\
+		- ? how is it deflationary?\
+	- new bitcoin cannot be inflated by \'93printing\'94 new money above the expected issuance rate\
+\
+- misc bitcoin facts\
+	- invented 2008 under alias of Satoshi Nakamoto\
+	- ? where was paper published?\
+	- largest transaction processed so far was $400million (for a $1 fee)\
+\
+- \cf2 Proof-Of-Work\cf0 \
+	- solves issue of double spending (when a single currency unit is spent twice)\
+	- can be used to achieve consensus on decentralized networks to prove fairness of elections, lotteries, asset registries, digital notarization, \'85\
+\
+- \cf2 bitcoin wallet\cf0 \
+	- analogous to a web browser (used to access the web / http protocol)\
+	- ? used to access the bitcoin system, and store keys?\
+	- ? if wallets are developed by 3rd parties, aren\'92t they security risks?\
+	- ? can we write our own wallets?\
+	- most common are Desktop Full Client, Mobile Lightweight wallet, and web third-party wallet\
+\
+- cold storage\
+	- offline storage of keys\
+	- can be printed on paper, or stored on a USB hard drive\
+\
+- \cf2 Full-node client (full node)\cf0 \
+	- client that stores the entire history of bitcoin transactions (125GB of disk, 2GB of ram)\
+	- offers complete autonomy and independent transaction verification\
+\
+- Lightweight client (SPV Simple Payment Verification)\
+	- connects to bitcoin full nodes for access to transaction info\
+	- stores user wallet locally and independently creates, validates, and transmits transactions\
+\
+- third-party API client\
+	- all transactions go through a third party\
+\
+- Bitcoin address\
+\
+\
+\
+MISC TERMS\
+- cryptography\
+	- study of securing information and communication\
+	- method of protecting and communications through the use of codes\
+	- \'93crypt\'94 = hidden	\'93graphy\'94 = writing\
+\
+- Cipher\
+	- algorithm to make information secret \
+	- algorithm for doing encryption\
+	- ex. Caesar Cipher \
+\
+- Encryption\
+	- process of protecting data with a cipher\
+\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls1\ilvl1\cf0 \
+\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 QUESTIONS\
+- why decentralized is good?\
+\
+\
+\
+\
+\
+}
