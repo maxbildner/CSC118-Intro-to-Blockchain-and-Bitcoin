@@ -1,0 +1,148 @@
+#!/bin/bash
+
+pip install --upgrade pip
+
+# https://github.com/makerdao/pymaker#known-ubuntu-issues
+# sudo apt-get install build-essential automake libtool pkg-config libffi-dev python-dev python-pip libsecp256k1-dev
+
+# You must have done the following: install Anaconda/Miniconda
+# wget https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh
+# bash Anaconda3-2020.11-Linux-x86_64.sh
+
+# Set up an environment
+# conda create -n <env_name> python=3.6   #  -> # create new environment with python 3.6, for example 
+# conda activate <env_name>               #  -> # go into the virtual environment
+
+# Then you can run this script
+# chmod u+x installations.sh              # might be necessary
+# bash installations.sh <env_name>
+
+
+
+myenv=$1 # this is the first and only argument to this script, the environment name
+
+head_name="Python ("
+middle_name=$myenv
+tail_name=")"
+full_name="$head_name$myenv$tail_name"  # string concatenation
+
+
+sudo apt-get install git # install git to install py-ethereum
+
+# ipython and jupyter
+
+# install jupyter lab
+# pip install jupyter
+conda install -c conda-forge jupyterlab
+
+# create block_env environment within notebooks
+# python3 -m pip install ipykernel
+# python3 -m pip install ipykernel --user
+conda install -c anaconda ipykernel
+python3 -m ipykernel install --user --name $myenv --display-name "$full_name"
+# python3 -m ipykernel install --user --name block_env --display-name "Python(block_env)"
+
+# prompt-toolkit==3.0.8
+# for asymmetric crypto
+pip install ecdsa
+
+
+# for solidity and ethereum
+# https://ethereum.org/en/developers/docs/programming-languages/python/
+
+
+# install Solidity compiler
+# https://docs.soliditylang.org/en/v0.8.1/installing-solidity.html#installing-solidity
+# sudo add-apt-repository ppa:ethereum/ethereum
+# sudo apt-get update
+# sudo apt-get install solc
+
+# py-solc-x installs versions of solc as necessary
+# https://github.com/iamdefinitelyahuman/py-solc-x
+# https://solcx.readthedocs.io/en/latest/
+# by default, solc versions installed at ~/.solcx/
+pip install py-solc-x
+python -m solcx.install v0.8.1
+
+
+# successors to the deprecated py-ethereum project:
+
+# Py-EVM: implementation of the Ethereum Virtual Machine (EVM) written in Python
+# https://github.com/ethereum/py-evm
+# https://py-evm.readthedocs.io/en/latest/guides/quickstart.html
+# implementation of the Ethereum protocol in Python
+# pip install -U py-evm
+# Trinity: implementation of an Ethereum network node built on Py-EVM
+# https://trinity.ethereum.org/
+# https://github.com/ethereum/trinity
+# https://trinity-client.readthedocs.io/en/latest/quickstart.html
+
+# virtual blockchain for testing
+# https://github.com/ethereum/eth-tester
+# pip install eth-tester
+
+# https://web3py.readthedocs.io/en/stable/
+# pip install web3
+
+# pip extras package which installs the correct interoperable versions of the
+# eth-tester and py-evm dependencies needed to do testing
+# search for "eth-tester" in
+# https://web3py.readthedocs.io/en/stable/providers.html#providers
+pip install -U 'web3[tester]'
+
+
+
+# Install Truffle
+# https://www.trufflesuite.com/docs/truffle/getting-started/installation
+
+## First need npm and nvm to manage npm versions
+
+apt-get install curl
+
+### nvm
+# https://github.com/nvm-sh/nvm#installing-and-updating
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+### install npm, latest long term service 
+# https://github.com/nvm-sh/nvm#usage
+nvm install --lts node
+
+### so devs know node version
+node -v > .nvmrc
+
+### install truffle
+npm install -g truffle
+
+
+# Install Ganache
+# Download and install the GUI https://truffleframework.com/ganache
+
+# install ganache CLI (formerly TestRPC)
+# https://github.com/trufflesuite/ganache-cli/blob/master/README.md
+npm install -g ganache-cli
+
+
+# Intall brownie
+# https://eth-brownie.readthedocs.io/en/stable/install.html
+# depends on ganache-cli
+pip install pipx
+pipx ensurepath
+source ~/.bashrc
+pipx install eth-brownie
+
+
+# JS stuff
+
+
+# Install web3.js
+# https://web3js.readthedocs.io/en/v1.3.0/getting-started.html
+npm install -g web3
+
+# Install truffle-assertions (3rd party libarry)
+# https://github.com/rkalis/truffle-assertions
+# https://www.npmjs.com/package/truffle-assertions
+npm install -g truffle-assertions
